@@ -23,6 +23,16 @@ Landing estática, elegante y ligera para empresa de producción de eventos y al
    - Logo oficial `logo.svg` o `logo.png` (reemplaza el placeholder `TP`).
 2. Abre `index.html` en el navegador.
 
+## Despliegue en Vercel
+1. Crea el repo en GitHub/GitLab, sube el contenido de esta carpeta.
+2. Entra a vercel.com, crea un nuevo proyecto e importa el repo.
+3. Framework preset: "Other" (estático). Output directory: raíz (`/`).
+4. Deploy. Vercel servirá `index.html` y `404.html` automáticamente.
+
+Notas
+- `vercel.json` añade headers de seguridad y caché para `assets/`.
+- Si agregas SPA routing, considera un rewrite a `index.html`.
+
 ## Personalización rápida
 - Teléfono WhatsApp: edita en `assets/js/main.js` la constante `phone`.
 - Correo y teléfono del footer en `index.html`.
