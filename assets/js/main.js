@@ -29,7 +29,7 @@
   const wa = document.querySelector('.whatsapp');
   if(wa){
     wa.addEventListener('click', ()=>{
-      const phone = '+573001234567';
+  const phone = '+573214174621';
       const msg = encodeURIComponent('Hola, me gustaría cotizar un evento con Toledo Producciones.');
       window.open(`https://wa.me/${phone}?text=${msg}`, '_blank');
     })
