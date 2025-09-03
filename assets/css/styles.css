@@ -55,7 +55,12 @@ img{max-width:100%; display:block}
 
 /* Cards */
 .cards{display:grid; grid-template-columns:repeat(4,1fr); gap:18px}
+.cards-2{grid-template-columns:repeat(2,1fr)}
 .card{background:var(--card); border:1px solid rgba(255,255,255,0.06); padding:22px; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.25)}
+.package-card{position:relative; overflow:hidden}
+.package-card .tag{position:absolute; top:16px; right:16px; background:var(--grad); color:#0b0b0b; font-weight:700; padding:6px 10px; border-radius:999px; font-size:12px}
+.package-card .tag-muted{background:rgba(255,255,255,0.06); color:#E5E7EB; border:1px solid rgba(255,255,255,0.12); font-weight:600}
+.package-card .actions{margin-top:14px; display:flex; gap:10px; flex-wrap:wrap}
 .card-icon{width:44px; height:44px; display:grid; place-items:center; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:10px; margin-bottom:12px}
 .card h3{margin:6px 0 8px; font-size:20px}
 .card p{margin:0 0 12px; color:#D1D5DB}
@@ -109,6 +114,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid rgba(200,164,77,0.35);
 /* Responsive */
 @media (max-width: 1024px){
   .cards{grid-template-columns:repeat(2,1fr)}
+  .cards-2{grid-template-columns:1fr}
   .testimonials{grid-template-columns:1fr}
 }
 @media (max-width: 720px){
