@@ -34,4 +34,26 @@
       window.open(`https://wa.me/${phone}?text=${msg}`, '_blank');
     })
   }
+
+  // Prefill form if coming from package pages
+  try{
+    const params = new URLSearchParams(window.location.search);
+    const paquete = params.get('paquete');
+    if(paquete){
+      const select = document.querySelector('select#servicio');
+      if(select){
+        const val = paquete.toLowerCase();
+        // Set a custom option or fallback to Producción Integral
+        const opt = document.createElement('option');
+        opt.value = `Paquete ${paquete}`;
+        opt.textContent = `Paquete ${paquete}`;
+        opt.selected = true;
+        select.appendChild(opt);
+      }
+      const msg = document.querySelector('textarea#mensaje');
+      if(msg && !msg.value){
+        msg.value = `Estoy interesado(a) en el Paquete ${paquete}. Por favor, contáctenme.`;
+      }
+    }
+  }catch(_e){}
 })();

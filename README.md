@@ -11,6 +11,8 @@ Landing estática, elegante y ligera para empresa de producción de eventos y al
 
 ## Estructura
 - `index.html` — página principal.
+- `golden.html` — página del Paquete Golden.
+- `silver.html` — página del Paquete Silver.
 - `assets/css/styles.css` — estilos.
 - `assets/js/main.js` — interacciones básicas.
 - `assets/img/` — imágenes (agrega tu logo e imágenes reales).
@@ -22,6 +24,11 @@ Landing estática, elegante y ligera para empresa de producción de eventos y al
    - Logos de clientes `logo1.svg` ... `logo4.svg`.
    - Logo oficial `logo.svg` o `logo.png` (reemplaza el placeholder `TP`).
 2. Abre `index.html` en el navegador.
+
+### Páginas de paquetes
+- Golden: `/golden.html`
+- Silver: `/silver.html`
+Si visitas `index.html?paquete=Golden` o `?paquete=Silver`, el formulario se prellena con ese paquete.
 
 ## Despliegue en Vercel
 1. Crea el repo en GitHub/GitLab, sube el contenido de esta carpeta.
