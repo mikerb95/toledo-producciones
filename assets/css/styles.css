@@ -8,6 +8,7 @@
   --bg:#0F0F10;
   --card:#121214;
   --grad:linear-gradient(135deg, rgba(200,164,77,0.9) 0%, rgba(231,200,115,0.85) 100%);
+  --hero-cut:6vh; /* recorte inferior del hero para mostrar más contenido */
 }
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -34,7 +35,7 @@ img{max-width:100%; display:block}
 .nav-toggle{display:none; background:none; border:0; color:var(--white); font-size:22px}
 
 /* Hero */
-.hero{position:relative; min-height:88vh; display:grid; place-items:center; overflow:hidden}
+.hero{position:relative; min-height:82vh; display:grid; place-items:center; overflow:hidden; clip-path:inset(0 0 var(--hero-cut) 0)}
 .hero-media{position:absolute; inset:0}
 .hero-video{width:100%; height:100%; object-fit:cover; filter:grayscale(10%) contrast(1.05)}
 .hero-overlay{position:absolute; inset:0; background:radial-gradient(60% 60% at 60% 40%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 55%, rgba(0,0,0,0.85) 100%)}
@@ -42,7 +43,7 @@ img{max-width:100%; display:block}
 .hero h1{font-family:"Playfair Display",serif; font-size:64px; line-height:1.05; letter-spacing:0.2px; margin:0 0 12px}
 .hero p{max-width:780px; margin:0 auto 22px; color:#E5E7EB; font-size:18px}
 .hero-cta{display:flex; gap:14px; justify-content:center}
-.hero-badges{position:absolute; bottom:24px; left:50%; transform:translateX(-50%); display:flex; gap:14px}
+.hero-badges{position:absolute; bottom:calc(24px + var(--hero-cut)); left:50%; transform:translateX(-50%); display:flex; gap:14px}
 .badge{background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); padding:10px 14px; border-radius:999px; color:#D1D5DB; font-size:13px}
 .badge span{color:var(--gold-2); font-weight:700; margin-right:6px}
 
@@ -119,6 +120,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid rgba(200,164,77,0.35);
 }
 @media (max-width: 720px){
   .hero h1{font-size:42px}
+  :root{--hero-cut:4vh}
   .nav-links{position:fixed; inset-inline:0; top:58px; background:rgba(11,11,11,0.96); border-top:1px solid rgba(255,255,255,0.08); display:none; flex-direction:column; padding:18px}
   .nav-toggle{display:block}
   .cards{grid-template-columns:1fr}
