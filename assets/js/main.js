@@ -35,6 +35,28 @@
     })
   }
 
+  // Fondo dorado: mover luz con scroll y mouse
+  const root = document.documentElement;
+  const updateSpec = (xPerc, yPerc)=>{
+    root.style.setProperty('--spec-x', `${xPerc}%`);
+    root.style.setProperty('--spec-y', `${yPerc}%`);
+  };
+  // Inicial por scroll
+  const onScroll = ()=>{
+    const max = Math.max(document.body.scrollHeight - window.innerHeight, 1);
+    const y = (window.scrollY / max) * 60 + 20; // 20%..80%
+    const x = 70 - (window.scrollY / max) * 30; // 70%..40%
+    updateSpec(x, y);
+  };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  // Interacción con mouse
+  window.addEventListener('mousemove', (e)=>{
+    const x = (e.clientX / window.innerWidth) * 100;
+    const y = (e.clientY / window.innerHeight) * 100;
+    updateSpec(x, y);
+  });
+
   // Prefill form if coming from package pages
   try{
     const params = new URLSearchParams(window.location.search);
